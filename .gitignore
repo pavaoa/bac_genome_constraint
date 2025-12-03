@@ -28,6 +28,7 @@ ENV/
 # Jupyter Notebook
 .ipynb_checkpoints
 *.ipynb
+!scripts/3_GO_analyses/go_analyses.ipynb
 
 # R
 .Rhistory
