@@ -87,6 +87,10 @@ data/ncbi/metadata/*.json
 # *.jpg
 # *.svg
 
+# Standalone HTML package (can be regenerated, too large for GitHub)
+docs/Final_presentation/*.zip
+docs/Final_presentation/standalone/
+
 # Logs (but keep QC logs from analyses)
 *.log
 !results/**/qc_*.log

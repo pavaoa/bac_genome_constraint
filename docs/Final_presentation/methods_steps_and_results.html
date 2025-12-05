@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <base href="file:///n/scratch/users/b/byc014/github/bac_genome_constraint/">
     <title>Methods, Steps, and Results: Bacterial Genome Constraint Analysis</title>
     <style>
         body {
@@ -193,24 +194,24 @@
 <li><strong>GO Term Prevalence</strong>: ≥99% (ubiquitous terms only)</li>
 </ol>
 <p><strong>QC Results:</strong></p>
-<p><img alt="QC Filtering Flowchart" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_01/prev99_fig_01A_QC_filtering_flowchart.png" /></p>
+<p><img alt="QC Filtering Flowchart" src="results/4_statistical_analyses/04.5_intermediate_figures/script_01/prev99_fig_01A_QC_filtering_flowchart.png" /></p>
 <p><strong>Figure 1A: QC Filtering Flowchart</strong><br />
 <em>Description</em>: Flowchart showing genome counts at each QC step. Final dataset: 2,164 high-quality genomes after applying completeness (≥90%), contamination (≤5%), and gene count filters.<br />
 <em>Interpretation</em>: The filtering pipeline ensures high-quality data while maintaining sufficient sample size for robust statistical analyses. The majority of genomes pass QC, indicating good data quality.</p>
-<p><img alt="Completeness Distribution" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_01/prev99_fig_01B_completeness_distribution.png" /></p>
+<p><img alt="Completeness Distribution" src="results/4_statistical_analyses/04.5_intermediate_figures/script_01/prev99_fig_01B_completeness_distribution.png" /></p>
 <p><strong>Figure 1B: CheckM Completeness Distribution</strong><br />
 <em>Description</em>: Histogram of CheckM completeness scores for raw vs. high-quality genomes.<br />
 <em>Interpretation</em>: The ≥90% threshold effectively filters out incomplete genomes while retaining the majority of the dataset. Most high-quality genomes have completeness &gt;95%.</p>
-<p><img alt="Contamination Distribution" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_01/prev99_fig_01C_contamination_distribution.png" /></p>
+<p><img alt="Contamination Distribution" src="results/4_statistical_analyses/04.5_intermediate_figures/script_01/prev99_fig_01C_contamination_distribution.png" /></p>
 <p><strong>Figure 1C: CheckM Contamination Distribution</strong><br />
 <em>Description</em>: Histogram of CheckM contamination scores.<br />
 <em>Interpretation</em>: The ≤5% threshold removes potentially contaminated assemblies. Most high-quality genomes have contamination &lt;2%, indicating clean assemblies.</p>
-<p><img alt="Genome Size Distribution" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_01/prev99_fig_01D_genome_size_distribution.png" /></p>
+<p><img alt="Genome Size Distribution" src="results/4_statistical_analyses/04.5_intermediate_figures/script_01/prev99_fig_01D_genome_size_distribution.png" /></p>
 <p><strong>Figure 1D: Genome Size Distribution</strong><br />
 <em>Description</em>: Distribution of total gene counts (<code>genes_total</code>) for raw vs. high-quality genomes.<br />
 <em>Interpretation</em>: QC filtering does not introduce systematic bias in genome size. The distribution spans ~500-10,000 genes, representing diverse bacterial genome sizes.</p>
 <h3>Environment Distribution</h3>
-<p><img alt="Environment Counts" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_01/prev99_fig_02A_environment_counts_QC.png" /></p>
+<p><img alt="Environment Counts" src="results/4_statistical_analyses/04.5_intermediate_figures/script_01/prev99_fig_02A_environment_counts_QC.png" /></p>
 <p><strong>Figure 2A: Environment Counts After QC</strong><br />
 <em>Description</em>: Bar plot showing number of genomes per environment after QC filtering.<br />
 <em>Interpretation</em>: Class imbalance exists: Aquatic (27.6%) and Terrestrial (22.1%) are largest, while Birds (1.7%) and Wastewater (2.9%) are smallest. This imbalance is addressed in prediction models using class weighting.</p>
@@ -369,85 +370,85 @@ $$
 <hr />
 <h2>Results: Statistical Scaling Analyses</h2>
 <h3>Global Scaling Patterns</h3>
-<p><img alt="Global Exponents Distribution" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_fig_04A_global_exponents_histogram.png" /></p>
+<p><img alt="Global Exponents Distribution" src="results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_fig_04A_global_exponents_histogram.png" /></p>
 <p><strong>Figure 3A: Global Scaling Exponent Distribution</strong><br />
 <em>Description</em>: Histogram of global scaling exponents ($\alpha_{\text{global}}$) across all 208 GO categories. Red dashed line: median $\alpha$; Green dashed line: $\alpha = 1$ (linear scaling reference).<br />
 <em>Interpretation</em>: Most categories show near-linear scaling (α ≈ 1), with median around 0.95-1.05. This indicates that functional gene content generally scales proportionally with genome size. Some categories show sub-linear (α &lt; 0.9) or super-linear (α &gt; 1.1) scaling, suggesting category-specific constraints.</p>
-<p><img alt="Exponent vs R²" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_fig_04B_alpha_vs_r2.png" /></p>
+<p><img alt="Exponent vs R²" src="results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_fig_04B_alpha_vs_r2.png" /></p>
 <p><strong>Figure 3B: Exponent vs. R²</strong><br />
 <em>Description</em>: Scatter plot of global scaling exponent vs. R² (coefficient of determination).<br />
 <em>Interpretation</em>: Most categories have high R² (&gt;0.7), indicating good fit quality. Categories with extreme exponents (α &lt; 0.8 or α &gt; 1.2) may have lower R², suggesting the power-law model may not capture all variance. High R² with α ≈ 1 confirms that linear scaling is a good approximation for most categories.</p>
-<p><img alt="Exponent vs Mean Count" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_fig_04C_alpha_vs_mean_count.png" /></p>
+<p><img alt="Exponent vs Mean Count" src="results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_fig_04C_alpha_vs_mean_count.png" /></p>
 <p><strong>Figure 3C: Exponent vs. Mean Count</strong><br />
 <em>Description</em>: Scatter plot of global scaling exponent vs. mean GO category count per genome.<br />
 <em>Interpretation</em>: No strong correlation between exponent and category abundance. Rare categories (low mean count) can have reliable exponent estimates if they scale consistently. This validates that our 99% prevalence threshold captures categories with sufficient data for reliable fits.</p>
-<p><img alt="Representative Scaling Plots" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_fig_04D_representative_scaling.png" /></p>
+<p><img alt="Representative Scaling Plots" src="results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_fig_04D_representative_scaling.png" /></p>
 <p><strong>Figure 3D: Representative Global Scaling Plots (Log Scale)</strong><br />
 <em>Description</em>: Faceted scatter plots showing log-log fits for top 20 GO categories (selected by Z-score variance). Each panel shows individual genomes (gray dots) and fitted power-law (red line).<br />
 <em>Interpretation</em>: Visual validation of the power-law model. Log-log plots show linear relationships, confirming power-law scaling. Categories with high Z-score variance (selected for display) show environment-specific variation, as expected.</p>
-<p><img alt="Representative Scaling Plots (Linear)" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_fig_04D_representative_scaling_linear.png" /></p>
+<p><img alt="Representative Scaling Plots (Linear)" src="results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_fig_04D_representative_scaling_linear.png" /></p>
 <p><strong>Figure 3D (Linear Scale): Representative Global Scaling Plots</strong><br />
 <em>Description</em>: Same as Figure 3D but in linear space. Power-law curves: $y = \exp(\beta) \times x^{\alpha}$.<br />
 <em>Interpretation</em>: Linear-scale plots show the actual scaling in natural units, more interpretable for non-specialists. Curves show how category counts grow with genome size. Categories with α &lt; 1 show decelerating growth (concave curves), while α &gt; 1 shows accelerating growth (convex curves).</p>
 <h3>Environment-Specific Scaling and Z-Scores</h3>
-<p><img alt="Z-Score Heatmap (Exponents)" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_05A_Z_alpha_heatmap.png" /></p>
+<p><img alt="Z-Score Heatmap (Exponents)" src="results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_05A_Z_alpha_heatmap.png" /></p>
 <p><strong>Figure 4A: Z-Score Heatmap for Exponents</strong><br />
 <em>Description</em>: Heatmap showing $Z_{\alpha}$ (Z-scores for exponents) for each environment × GO category combination. Rows and columns are hierarchically clustered (Euclidean distance). Color scale: blue (negative Z), white (near zero), red (positive Z).<br />
 <em>Interpretation</em>: Identifies environment-category combinations with significant deviations from global scaling. Clustering reveals groups of categories or environments with similar scaling patterns. Red regions indicate environments where categories scale faster than global average; blue indicates slower scaling. The clustering structure suggests environment-specific functional requirements.</p>
-<p><img alt="Z-Score Heatmap (Offsets)" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_05B_Z_beta_heatmap.png" /></p>
+<p><img alt="Z-Score Heatmap (Offsets)" src="results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_05B_Z_beta_heatmap.png" /></p>
 <p><strong>Figure 4B: Z-Score Heatmap for Offsets</strong><br />
 <em>Description</em>: Heatmap showing $Z_{\beta}$ (Z-scores for offsets) for each environment × GO category combination.<br />
 <em>Interpretation</em>: Reveals environment-specific differences in baseline gene content (offset) independent of scaling exponent. Categories with high $|Z_{\beta}|$ have environment-specific absolute abundances, even if scaling exponents are similar. This indicates that some environments have systematically higher or lower baseline levels of certain functional categories.</p>
-<p><img alt="Absolute Z-Score by Environment" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_05C_abs_Z_alpha_by_env.png" /></p>
+<p><img alt="Absolute Z-Score by Environment" src="results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_05C_abs_Z_alpha_by_env.png" /></p>
 <p><strong>Figure 4C: Absolute Z-Score Distribution by Environment</strong><br />
 <em>Description</em>: Box plot showing distribution of $|Z_{\alpha}|$ (absolute Z-scores) across GO categories, stratified by environment.<br />
 <em>Interpretation</em>: Identifies which environments show the most deviation from global scaling patterns. Environments with high median $|Z_{\alpha}|$ have distinct scaling relationships compared to the global average. This suggests that certain environments impose unique constraints on functional gene content scaling.</p>
-<p><img alt="Significant Categories by Environment" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_05D_significant_categories_by_env.png" /></p>
+<p><img alt="Significant Categories by Environment" src="results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_05D_significant_categories_by_env.png" /></p>
 <p><strong>Figure 4D: Significant Categories by Environment</strong><br />
 <em>Description</em>: Bar plot showing number of GO categories with $|Z_{\alpha}| > 2$ (significant deviation) per environment.<br />
 <em>Interpretation</em>: Quantifies how many functional categories show environment-specific scaling in each environment. Environments with many significant categories are candidates for detailed investigation. This metric helps prioritize which environments show the strongest environment-specific patterns.</p>
-<p><img alt="Z-Score Distribution (Exponents)" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_06A_Z_alpha_category_histogram.png" /></p>
+<p><img alt="Z-Score Distribution (Exponents)" src="results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_06A_Z_alpha_category_histogram.png" /></p>
 <p><strong>Figure 5A: Category-Level Z-Score Distribution (Exponents)</strong><br />
 <em>Description</em>: Histogram of $Z_{\alpha,\text{category}}$ (root mean square Z-score across environments) for all GO categories. Vertical line: $|Z| = 2$ threshold.<br />
 <em>Interpretation</em>: Shows the distribution of environment-specific variation across categories. Categories with high $Z_{\alpha,\text{category}}$ show consistent environment-specific scaling across multiple environments. Most categories have moderate Z-scores (1-3), indicating some environment-specific variation but not extreme.</p>
-<p><img alt="Z-Score Distribution (Offsets)" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_06B_Z_beta_category_histogram.png" /></p>
+<p><img alt="Z-Score Distribution (Offsets)" src="results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_06B_Z_beta_category_histogram.png" /></p>
 <p><strong>Figure 5B: Category-Level Z-Score Distribution (Offsets)</strong><br />
 <em>Description</em>: Histogram of $Z_{\beta,\text{category}}$ for all GO categories.<br />
 <em>Interpretation</em>: Similar to Figure 5A but for offset parameters. Identifies categories with environment-specific baseline abundances. The distribution is similar to exponents, suggesting that both scaling and baseline levels vary by environment.</p>
-<p><img alt="Environment-Stratified Scaling" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_07_env_stratified_scaling.png" /></p>
+<p><img alt="Environment-Stratified Scaling" src="results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_07_env_stratified_scaling.png" /></p>
 <p><strong>Figure 6: Environment-Stratified Scaling (Log Scale)</strong><br />
 <em>Description</em>: Faceted scatter plots showing scaling relationships for top 20 GO categories (by Z-score variance), with points colored by environment and separate fit lines per environment.<br />
 <em>Interpretation</em>: Visualizes environment-specific scaling for categories with high Z-score variance. If environment-specific lines diverge, this confirms environment-dependent scaling. This is the most direct visualization of the core hypothesis: that scaling relationships differ between environments. The divergence of colored lines from the gray global fit confirms environment-specific patterns.</p>
-<p><img alt="Environment-Stratified Scaling (Linear)" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_07_env_stratified_scaling_linear.png" /></p>
+<p><img alt="Environment-Stratified Scaling (Linear)" src="results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_fig_07_env_stratified_scaling_linear.png" /></p>
 <p><strong>Figure 6 (Linear Scale): Environment-Stratified Scaling</strong><br />
 <em>Description</em>: Same as Figure 6 but in linear space.<br />
 <em>Interpretation</em>: Linear-scale version shows actual scaling in natural units. The divergence of environment-specific curves is more visually apparent in linear space, making it easier to interpret the magnitude of environment-specific differences.</p>
 <h3>Publication Figures</h3>
-<p><img alt="Z-Statistics by Category (Exponents)" src="../../results/4_statistical_analyses/06_figures/prev99_fig1a_Z_exponents_by_category_env.png" /></p>
+<p><img alt="Z-Statistics by Category (Exponents)" src="results/4_statistical_analyses/06_figures/prev99_fig1a_Z_exponents_by_category_env.png" /></p>
 <p><strong>Figure 7A: Z-Statistics for Exponents by Category</strong><br />
 <em>Description</em>: Bar plot showing $Z_{\alpha,\text{category}}$ for each GO category, sorted by Z-score magnitude. Top categories are labeled with GO term names. Horizontal line: $|Z| = 2$ (significance threshold).<br />
 <em>Interpretation</em>: Provides a ranked view of categories by environment-specific variation in scaling exponents. Categories with high $|Z_{\alpha,\text{category}}|$ are prime candidates for environment-specific scaling. The labeled categories (e.g., "phosphorelay signal transduction system", "DNA-binding transcription factor activity") represent functional groups that show strong environment-specific scaling patterns.</p>
-<p><img alt="Z-Statistics by Category (Offsets)" src="../../results/4_statistical_analyses/06_figures/prev99_fig1b_Z_offsets_by_category_env.png" /></p>
+<p><img alt="Z-Statistics by Category (Offsets)" src="results/4_statistical_analyses/06_figures/prev99_fig1b_Z_offsets_by_category_env.png" /></p>
 <p><strong>Figure 7B: Z-Statistics for Offsets by Category</strong><br />
 <em>Description</em>: Bar plot showing $Z_{\beta,\text{category}}$ for each GO category, sorted by Z-score magnitude.<br />
 <em>Interpretation</em>: Similar to Figure 7A but for offset parameters. Identifies categories with environment-specific baseline abundances, independent of scaling exponent. Categories with high $|Z_{\beta,\text{category}}|$ have systematically different baseline levels across environments.</p>
-<p><img alt="Exponent Comparisons for Selected Categories" src="../../results/4_statistical_analyses/06_figures/prev99_fig1cde_env_exponents_selected_categories.png" /></p>
+<p><img alt="Exponent Comparisons for Selected Categories" src="results/4_statistical_analyses/06_figures/prev99_fig1cde_env_exponents_selected_categories.png" /></p>
 <p><strong>Figure 7C-E: Exponent Comparisons for Selected Categories</strong><br />
 <em>Description</em>: Faceted plots showing fitted exponents ($\alpha_{\text{env}}$) with 99% confidence intervals for selected GO categories across all environments. Horizontal dashed line: $\alpha_{\text{global}}$ (global exponent).<br />
 <em>Interpretation</em>: Shows how scaling exponents vary across environments for representative categories. If confidence intervals don't overlap with the global exponent, this confirms environment-specific scaling. Categories are selected to represent the full range of Z-scores, providing both negative and positive examples. The variation in exponents across environments confirms that scaling is not universal but environment-dependent.</p>
-<p><img alt="Scatter Plots with Fits" src="../../results/4_statistical_analyses/06_figures/prev99_fig1f_to_k_env_scatter_scaling.png" /></p>
+<p><img alt="Scatter Plots with Fits" src="results/4_statistical_analyses/06_figures/prev99_fig1f_to_k_env_scatter_scaling.png" /></p>
 <p><strong>Figure 7F-K: Scatter Plots with Environment-Specific Fits (Log Scale)</strong><br />
 <em>Description</em>: Faceted scatter plots showing scaling relationships for selected categories and environments, with both global and environment-specific fits. Gray points: all genomes; Colored points: genomes from specific environment; Colored line: environment-specific fit; Gray line: global fit.<br />
 <em>Interpretation</em>: Provides direct visual evidence of environment-specific scaling. If the colored line (environment-specific fit) deviates from the gray line (global fit), this confirms environment-dependent scaling. The selected combinations highlight categories with strong environment-specific patterns.</p>
-<p><img alt="Scatter Plots with Fits (Linear)" src="../../results/4_statistical_analyses/06_figures/prev99_fig1f_to_k_env_scatter_scaling_linear.png" /></p>
+<p><img alt="Scatter Plots with Fits (Linear)" src="results/4_statistical_analyses/06_figures/prev99_fig1f_to_k_env_scatter_scaling_linear.png" /></p>
 <p><strong>Figure 7F-K (Linear Scale): Scatter Plots with Environment-Specific Fits</strong><br />
 <em>Description</em>: Same as Figure 7F-K but in linear space.<br />
 <em>Interpretation</em>: Linear-scale version is more interpretable for non-specialists, showing actual scaling in natural units. The deviation of environment-specific curves from the global curve is more visually apparent.</p>
-<p><img alt="GO Category Count vs Total Annotated Domains" src="../../results/4_statistical_analyses/06_figures/prev99_fig1_domains_vs_total_domains.png" /></p>
+<p><img alt="GO Category Count vs Total Annotated Domains" src="results/4_statistical_analyses/06_figures/prev99_fig1_domains_vs_total_domains.png" /></p>
 <p><strong>Figure 8: GO Category Count vs. Total Annotated Domains (Log Scale)</strong><br />
 <em>Description</em>: Faceted scatter plots showing relationship between GO category count and total annotated domains (sum of all GO counts per genome). Points colored by environment; lines show environment-specific fits.<br />
 <em>Interpretation</em>: Tests whether category abundance scales with total functional diversity rather than just genome size. If scaling is similar to the <code>genes_total</code> plots, this suggests genome size is the primary driver. If scaling differs, this suggests functional diversity may be more relevant. This analysis helps distinguish between genome size effects and functional complexity effects.</p>
-<p><img alt="GO Category Count vs Total Annotated Domains (Linear)" src="../../results/4_statistical_analyses/06_figures/prev99_fig1_domains_vs_total_domains_linear.png" /></p>
+<p><img alt="GO Category Count vs Total Annotated Domains (Linear)" src="results/4_statistical_analyses/06_figures/prev99_fig1_domains_vs_total_domains_linear.png" /></p>
 <p><strong>Figure 8 (Linear Scale): GO Category Count vs. Total Annotated Domains</strong><br />
 <em>Description</em>: Same as Figure 8 but in linear space.<br />
 <em>Interpretation</em>: Linear-scale version shows the relationship in natural units, making it easier to interpret the magnitude of scaling.</p>
@@ -514,11 +515,11 @@ $$
 - Top predictive features include GO terms (0003824, 0022857, 0016491) and <code>genes_total</code>
 - Class imbalance: Birds (1.7%) and Wastewater (2.9%) are underrepresented
 - All models outperform baseline (27.65% → 59.45%)</p>
-<p><img alt="Model Performance Comparison" src="../../results/5_environment_prediction/prev99_fig01_model_performance_comparison.png" /></p>
+<p><img alt="Model Performance Comparison" src="results/5_environment_prediction/prev99_fig01_model_performance_comparison.png" /></p>
 <p><strong>Figure 9: Model Performance Comparison</strong><br />
 <em>Description</em>: Four-panel comparison of model performance metrics: (1) Test accuracy by model, (2) Test balanced accuracy by model, (3) Macro F1-score by model, (4) Train vs. test accuracy (overfitting check).<br />
 <em>Interpretation</em>: Random Forest and XGBoost achieve the highest test accuracy (59.45%), significantly outperforming the baseline (27.65%). However, balanced accuracy is lower (40.30%), reflecting challenges with minority classes. The overfitting check (panel 4) shows a large gap between train and test accuracy for tree-based models (37-41%), indicating potential overfitting. Logistic Regression shows less overfitting (20.8% gap) and better balanced accuracy (41.38%), suggesting it may generalize better despite lower overall accuracy.</p>
-<p><img alt="Confusion Matrices" src="../../results/5_environment_prediction/prev99_fig02_confusion_matrices.png" /></p>
+<p><img alt="Confusion Matrices" src="results/5_environment_prediction/prev99_fig02_confusion_matrices.png" /></p>
 <p><strong>Figure 10: Confusion Matrices for All Models</strong><br />
 <em>Description</em>: Normalized confusion matrices for all models (baseline, RF, GB, XGB, LR). Rows: true environment labels; Columns: predicted environment labels; Values: normalized proportions (percentages).<br />
 <em>Interpretation</em>: 
@@ -526,7 +527,7 @@ $$
 - <strong>Tree-based models (RF, GB, XGB)</strong>: Strong performance on "Aquatic" (80-85% accuracy), moderate on "Terrestrial" (56-60%) and "Mammals: Human" (58-73%), poor on rare classes ("Wastewater", "Birds") → often predicted as 0.
 - <strong>Logistic Regression</strong>: More balanced predictions across classes, lower overall accuracy but better recall for minority classes.
 - <strong>Common confusions</strong>: "Terrestrial" ↔ "Aquatic" (ecologically similar), "Mammals" ↔ "Mammals: Human" (taxonomically related), "Plants" ↔ "Terrestrial" (environmental overlap).</p>
-<p><img alt="ROC Curves" src="../../results/5_environment_prediction/prev99_fig03_roc_curves.png" /></p>
+<p><img alt="ROC Curves" src="results/5_environment_prediction/prev99_fig03_roc_curves.png" /></p>
 <p><strong>Figure 11: ROC Curves (AUC) for All Models</strong><br />
 <em>Description</em>: ROC curves for each model, showing one-vs-rest classification performance for each environment class. Diagonal dashed line: random classifier (AUC = 0.5).<br />
 <em>Interpretation</em>: 
@@ -535,7 +536,7 @@ $$
 - <strong>Rare classes (Wastewater, Birds)</strong>: Lower AUC (~0.50-0.70) due to limited training data.
 - <strong>Mean AUC by model</strong>: RF (~0.75), GB (~0.74), XGBoost (~0.75), LR (~0.72).
 - All models show discriminative ability (AUC &gt; 0.5), with best performance on majority classes.</p>
-<p><img alt="Per-Class Performance Metrics" src="../../results/5_environment_prediction/prev99_fig04_per_class_metrics.png" /></p>
+<p><img alt="Per-Class Performance Metrics" src="results/5_environment_prediction/prev99_fig04_per_class_metrics.png" /></p>
 <p><strong>Figure 12: Per-Class Performance Metrics</strong><br />
 <em>Description</em>: Four-panel heatmap showing per-class metrics across all models: (1) Precision by environment and model, (2) Recall by environment and model, (3) F1-score by environment and model, (4) Test set sample size by environment.<br />
 <em>Interpretation</em>: 
@@ -544,7 +545,7 @@ $$
 - <strong>Rare classes (Wastewater, Birds)</strong>: Low precision/recall/F1 (limited training data, often predicted as 0).
 - <strong>Logistic Regression</strong>: More balanced performance across classes (better recall for minority classes).
 - The sample size panel (4) confirms class imbalance, with Aquatic having 60 test samples vs. Birds having only 3.</p>
-<p><img alt="Feature Importance" src="../../results/5_environment_prediction/prev99_fig05_feature_importance.png" /></p>
+<p><img alt="Feature Importance" src="results/5_environment_prediction/prev99_fig05_feature_importance.png" /></p>
 <p><strong>Figure 13: Top 20 Feature Importances by Model</strong><br />
 <em>Description</em>: Top 20 most important features for each model (RF, GB, XGB, LR), with annotated GO term labels instead of numeric IDs.<br />
 <em>Interpretation</em>: 
@@ -566,23 +567,23 @@ $$
 - GO:0009058 (biosynthetic process)</p>
 <p><strong>Result</strong>: 173 metabolic GO terms out of 208 total (99% prevalence threshold).</p>
 <h3>Metabolic Scaling Patterns</h3>
-<p><img alt="Metabolic Z-Statistics (Exponents)" src="../../results/4_statistical_analyses/06_figures/prev99_metabolic_fig1a_Z_exponents_by_category_env.png" /></p>
+<p><img alt="Metabolic Z-Statistics (Exponents)" src="results/4_statistical_analyses/06_figures/prev99_metabolic_fig1a_Z_exponents_by_category_env.png" /></p>
 <p><strong>Figure 14: Metabolic GO Categories - Z-Statistics for Exponents</strong><br />
 <em>Description</em>: Bar plot showing $Z_{\alpha,\text{category}}$ for metabolism-related GO categories only, sorted by Z-score magnitude.<br />
 <em>Interpretation</em>: Focuses on metabolic functions to test whether metabolism shows environment-specific scaling. Categories with high $|Z|$ indicate that metabolic pathways scale differently across environments, supporting the hypothesis that nutrient availability constrains metabolic gene content. The distribution shows that many metabolic categories have significant environment-specific variation (|Z| &gt; 2), confirming that metabolic scaling is environment-dependent.</p>
-<p><img alt="Metabolic Representative Scaling" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_metabolic_fig_04D_representative_scaling.png" /></p>
+<p><img alt="Metabolic Representative Scaling" src="results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_metabolic_fig_04D_representative_scaling.png" /></p>
 <p><strong>Figure 15: Metabolic GO Categories - Representative Scaling (Log Scale)</strong><br />
 <em>Description</em>: Faceted scatter plots showing log-log fits for top metabolic GO categories.<br />
 <em>Interpretation</em>: Visual validation of power-law scaling for metabolic terms. The linear relationships in log-log space confirm that metabolic gene content scales with genome size. Categories selected for display show high Z-score variance, indicating environment-specific metabolic patterns.</p>
-<p><img alt="Metabolic Representative Scaling (Linear)" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_metabolic_fig_04D_representative_scaling_linear.png" /></p>
+<p><img alt="Metabolic Representative Scaling (Linear)" src="results/4_statistical_analyses/04.5_intermediate_figures/script_03/prev99_metabolic_fig_04D_representative_scaling_linear.png" /></p>
 <p><strong>Figure 15 (Linear Scale): Metabolic GO Categories - Representative Scaling</strong><br />
 <em>Description</em>: Same as Figure 15 but in linear space.<br />
 <em>Interpretation</em>: Linear-scale version shows actual metabolic scaling in natural units. The curves show how metabolic gene counts grow with genome size, with most categories showing near-linear scaling (α ≈ 1).</p>
-<p><img alt="Metabolic Environment-Stratified Scaling" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_metabolic_fig_07_env_stratified_scaling.png" /></p>
+<p><img alt="Metabolic Environment-Stratified Scaling" src="results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_metabolic_fig_07_env_stratified_scaling.png" /></p>
 <p><strong>Figure 16: Metabolic GO Categories - Environment-Stratified Scaling (Log Scale)</strong><br />
 <em>Description</em>: Faceted scatter plots showing scaling relationships for top metabolic categories, with points colored by environment and separate fit lines per environment.<br />
 <em>Interpretation</em>: Visualizes environment-specific metabolic scaling. The divergence of environment-specific lines confirms that metabolic pathways scale differently across environments. This supports the hypothesis that nutrient availability and metabolic requirements vary by environment, leading to environment-specific metabolic gene content.</p>
-<p><img alt="Metabolic Environment-Stratified Scaling (Linear)" src="../../results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_metabolic_fig_07_env_stratified_scaling_linear.png" /></p>
+<p><img alt="Metabolic Environment-Stratified Scaling (Linear)" src="results/4_statistical_analyses/04.5_intermediate_figures/script_04/prev99_metabolic_fig_07_env_stratified_scaling_linear.png" /></p>
 <p><strong>Figure 16 (Linear Scale): Metabolic GO Categories - Environment-Stratified Scaling</strong><br />
 <em>Description</em>: Same as Figure 16 but in linear space.<br />
 <em>Interpretation</em>: Linear-scale version shows environment-specific metabolic scaling in natural units. The divergence of curves is more visually apparent, making it easier to interpret the magnitude of environment-specific metabolic differences.</p>

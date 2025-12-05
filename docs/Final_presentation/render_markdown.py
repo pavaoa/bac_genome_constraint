@@ -51,6 +51,7 @@ def markdown_to_html(md_content):
 
 def main():
     base_dir = Path(__file__).parent
+    project_root = base_dir.parent.parent  # Go up from docs/Final_presentation to project root
     md_file = base_dir / 'methods_steps_and_results.md'
     html_file = base_dir / 'methods_steps_and_results.html'
     
@@ -61,11 +62,35 @@ def main():
     # Convert to HTML body (basic conversion, MathJax will handle equations)
     html_body = markdown_to_html(md_content)
     
+    # Fix image paths: convert relative paths (../../results/...) to paths from project root
+    import re
+    def fix_image_path(match):
+        img_tag = match.group(0)
+        # Extract the src path
+        src_match = re.search(r'src="([^"]+)"', img_tag)
+        if src_match:
+            old_path = src_match.group(1)
+            # If it's a relative path starting with ../../
+            if old_path.startswith('../../'):
+                # Remove the ../../ prefix to get path from project root
+                new_path = old_path.replace('../../', '')
+                # Verify the file exists
+                abs_path = project_root / new_path
+                if abs_path.exists():
+                    # Use relative path from project root (works with base tag)
+                    return img_tag.replace(f'src="{old_path}"', f'src="{new_path}"')
+        return img_tag
+    
+    # Replace all img tags with fixed paths
+    html_body = re.sub(r'<img[^>]+>', fix_image_path, html_body)
+    
     # Wrap in HTML template with MathJax
+    # Use base tag to set root for relative paths
     html_template = f"""<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
+    <base href="file://{project_root.absolute()}/">
     <title>Methods, Steps, and Results: Bacterial Genome Constraint Analysis</title>
     <style>
         body {{
