@@ -1,0 +1,70 @@
+================================================================================
+Script 01: Build Master Table
+  TEST MODE: Processing small subset only
+================================================================================
+
+A. Input Validation
+--------------------------------------------------------------------------------
+Loading GO counts table...
+  ✓ File loaded successfully (TEST MODE: using first 50 genomes)
+  Number of genomes with GO data: 50
+  Number of GO categories: 334
+  ✓ All GO columns are numeric
+  ✓ All GO values are >= 0
+  ✓ Index contains unique genome identifiers
+
+Loading feature matrix...
+  ✓ File loaded successfully (TEST MODE: using first 50 genomes)
+  Number of genomes in feature matrix: 50
+  ✓ All required columns present
+  ✓ genes_total is integer type
+  Number of genomes with genes_total > 0: 50 / 50
+  Missing data summary:
+    checkm_contamination: 7 NaN, 0 empty strings
+
+B. Join Integrity Checks
+--------------------------------------------------------------------------------
+Joining GO counts with feature matrix...
+  GO counts index name: Genome
+  Feature matrix accession column: accession
+  Expected ≈3088 rows (all GO genomes)
+  Actual: 13 rows
+  Difference: 3075 genomes
+  ✗ WARNING: Unexpected join size; investigate missing or duplicated keys.
+    Difference (99.58%) exceeds 2% threshold
+  ✓ No duplicate accessions after join
+  Missing environments: 0 NaN, 0 empty, 0 'Unclassified'
+
+C. QC Filtering
+--------------------------------------------------------------------------------
+  Starting with 13 genomes
+  Completeness filter (>90):
+    NaN values treated as 0: 0
+    Lost: 0 genomes
+  Contamination filter (<5):
+    NaN values treated as 100: 1
+    Lost: 1 genomes
+  Genes filter (>0): Lost 0 genomes
+  Environment filter (not null/empty/'Unclassified'):
+    Lost: 0 genomes (0 null, 0 empty, 0 'Unclassified')
+  Total retained: 12 genomes
+  Total lost: 1 genomes
+
+D. Environment-Level Sanity Checks
+--------------------------------------------------------------------------------
+  Environment counts (sorted by genome count):
+    Aquatic: 5 genomes
+    Terrestrial: 3 genomes
+      ⚠ WARNING: Environment has < 5 genomes
+    Mammals: 2 genomes
+      ⚠ WARNING: Environment has < 5 genomes
+    Mammals: Human: 1 genomes
+      ⚠ WARNING: Environment has < 5 genomes
+    Wastewater: 1 genomes
+      ⚠ WARNING: Environment has < 5 genomes
+
+E. Writing Outputs
+--------------------------------------------------------------------------------
+  ✓ master_table_raw_test.tsv: 13 rows
+  ✓ master_table_high_quality_test.tsv: 12 rows
+  ✓ environment_counts_all_test.tsv: 5 environments

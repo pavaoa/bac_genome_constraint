@@ -35,3 +35,4 @@ python3 scripts/5_environment_prediction_via_genomesize_n_99prevGO/5_environment
 
 echo "Analysis complete!"
 
+

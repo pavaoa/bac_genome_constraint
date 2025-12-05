@@ -1,0 +1,16 @@
+panel	category	short_label	environment	notes	axes_log_transformed
+f	0005048	signal sequence binding (GO:0005048)	Aquatic	Category 0005048 in Aquatic	log10
+g	0005048	signal sequence binding (GO:0005048)	Terrestrial	Category 0005048 in Terrestrial	log10
+h	0005048	signal sequence binding (GO:0005048)	Mammals: Human	Category 0005048 in Mammals: Human	log10
+i	0006436	tryptophanyl-tRNA aminoacylation (GO:0006436)	Aquatic	Category 0006436 in Aquatic	log10
+j	0006436	tryptophanyl-tRNA aminoacylation (GO:0006436)	Terrestrial	Category 0006436 in Terrestrial	log10
+k	0006436	tryptophanyl-tRNA aminoacylation (GO:0006436)	Mammals: Human	Category 0006436 in Mammals: Human	log10
+l	0051539	4 iron, 4 sulfur cluster binding (GO:0051539)	Aquatic	Category 0051539 in Aquatic	log10
+m	0051539	4 iron, 4 sulfur cluster binding (GO:0051539)	Terrestrial	Category 0051539 in Terrestrial	log10
+n	0051539	4 iron, 4 sulfur cluster binding (GO:0051539)	Mammals: Human	Category 0051539 in Mammals: Human	log10
+o	0003824	catalytic activity (GO:0003824)	Aquatic	Category 0003824 in Aquatic	log10
+p	0003824	catalytic activity (GO:0003824)	Terrestrial	Category 0003824 in Terrestrial	log10
+q	0003824	catalytic activity (GO:0003824)	Mammals: Human	Category 0003824 in Mammals: Human	log10
+r	0004832	valine-tRNA ligase activity (GO:0004832)	Aquatic	Category 0004832 in Aquatic	log10
+s	0004832	valine-tRNA ligase activity (GO:0004832)	Terrestrial	Category 0004832 in Terrestrial	log10
+t	0004832	valine-tRNA ligase activity (GO:0004832)	Mammals: Human	Category 0004832 in Mammals: Human	log10

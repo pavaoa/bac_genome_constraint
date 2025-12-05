@@ -1,0 +1,16 @@
+panel	category	short_label	environment	notes	axes_log_transformed
+f	0005048	signal sequence binding (GO:0005048)	Aquatic	Category 0005048 in Aquatic	log10
+g	0005048	signal sequence binding (GO:0005048)	Terrestrial	Category 0005048 in Terrestrial	log10
+h	0005048	signal sequence binding (GO:0005048)	Mammals: Human	Category 0005048 in Mammals: Human	log10
+i	0006541	glutamine metabolic process (GO:0006541)	Aquatic	Category 0006541 in Aquatic	log10
+j	0006541	glutamine metabolic process (GO:0006541)	Terrestrial	Category 0006541 in Terrestrial	log10
+k	0006541	glutamine metabolic process (GO:0006541)	Mammals: Human	Category 0006541 in Mammals: Human	log10
+l	0004372	glycine hydroxymethyltransferase activity (GO:0004372)	Aquatic	Category 0004372 in Aquatic	log10
+m	0004372	glycine hydroxymethyltransferase activity (GO:0004372)	Terrestrial	Category 0004372 in Terrestrial	log10
+n	0004372	glycine hydroxymethyltransferase activity (GO:0004372)	Mammals: Human	Category 0004372 in Mammals: Human	log10
+o	0019264	glycine biosynthetic process from serine (GO:0019264)	Aquatic	Category 0019264 in Aquatic	log10
+p	0019264	glycine biosynthetic process from serine (GO:0019264)	Terrestrial	Category 0019264 in Terrestrial	log10
+q	0019264	glycine biosynthetic process from serine (GO:0019264)	Mammals: Human	Category 0019264 in Mammals: Human	log10
+r	0051539	4 iron, 4 sulfur cluster binding (GO:0051539)	Aquatic	Category 0051539 in Aquatic	log10
+s	0051539	4 iron, 4 sulfur cluster binding (GO:0051539)	Terrestrial	Category 0051539 in Terrestrial	log10
+t	0051539	4 iron, 4 sulfur cluster binding (GO:0051539)	Mammals: Human	Category 0051539 in Mammals: Human	log10

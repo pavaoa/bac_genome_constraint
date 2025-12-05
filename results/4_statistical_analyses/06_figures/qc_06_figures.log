@@ -1,0 +1,49 @@
+================================================================================
+Script 06: Make Scaling Figures
+  PREVALENCE FILTER: 99.0%% threshold
+================================================================================
+
+Loading data...
+  ✓ Loaded 173 metabolism-related GO terms from prev99_metabolic_go_terms.txt
+  ✓ Loaded 204 categories, 1664 env×category fits
+  ✓ Loaded 2164 genomes, 208 GO labels
+
+Generating Panel 1a: Z-statistics for exponents by category...
+  ✓ Saved prev99_fig1a_Z_exponents_by_category_env.png and .pdf
+  ✓ Panel 1a completed
+  Generating metabolic version of Panel 1a...
+  ✓ Saved prev99_metabolic_fig1a_Z_exponents_by_category_env.png and .pdf
+  ✓ Metabolic Panel 1a completed (170 categories)
+
+Generating Panel 1b: Z-statistics for offsets by category...
+  ✓ Saved prev99_fig1b_Z_offsets_by_category_env.png and .pdf
+  ✓ Panel 1b completed
+
+Generating Panels 1c-1e: Exponent comparisons for selected categories...
+  ✓ Saved prev99_fig1cde_env_exponents_selected_categories.png and .pdf
+  ✓ Panels 1c-1e completed (8 categories)
+    Selected categories: 8 total (low Z, medium Z, high Z, and additional)
+
+Generating Panels 1f-1k: Scatter plots with fits...
+  ✓ Saved prev99_fig1f_to_k_env_scatter_scaling.png and .pdf
+  ✓ Panels 1f-1k (log scale) completed (15 panels)
+  ✓ Saved prev99_fig1f_to_k_env_scatter_scaling_linear.png and .pdf
+  ✓ Panels 1f-1k (linear scale) completed (15 panels)
+  ✓ prev99_fig1_panel_metadata.tsv written
+
+Generating Panels: GO category count vs total annotated domains...
+  ✓ Saved prev99_fig1_domains_vs_total_domains.png and .pdf
+  ✓ Panels (domains vs total domains, log scale) completed (15 panels)
+  ✓ Saved prev99_fig1_domains_vs_total_domains_linear.png and .pdf
+  ✓ Panels (domains vs total domains, linear scale) completed (15 panels)
+
+================================================================================
+QC Summary
+================================================================================
+  ✓ fig1a_Z_exponents_by_category_env: PNG (544.4 KB), PDF (38.3 KB)
+  ✓ fig1b_Z_offsets_by_category_env: PNG (563.6 KB), PDF (37.6 KB)
+  ✓ fig1cde_env_exponents_selected_categories: PNG (676.7 KB), PDF (46.0 KB)
+  ✓ fig1f_to_k_env_scatter_scaling: PNG (3486.6 KB), PDF (454.5 KB)
+  ✓ fig1f_to_k_env_scatter_scaling_linear: PNG (3276.9 KB), PDF (401.3 KB)
+
+Writing QC log...

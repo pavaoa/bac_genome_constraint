@@ -1,0 +1,60 @@
+================================================================================
+Script 02: Define Environment Cohorts
+  TEST MODE: Processing small subset only
+================================================================================
+
+A. Verify Consistency with Script 01
+--------------------------------------------------------------------------------
+Loading master_table_high_quality.tsv...
+  ✓ File loaded successfully (TEST MODE: using up to 10 genomes per environment)
+  Total genomes in input: 110
+  ✓ No missing environments
+  Recomputing environment counts...
+  ✗ WARNING: Found 11 environments with count mismatches > 1:
+    Algae: recomputed=10, from_col=16
+    Aquatic: recomputed=10, from_col=598
+    Bioreactor: recomputed=10, from_col=15
+    Birds: recomputed=10, from_col=36
+    Food production: recomputed=10, from_col=103
+    Mammals: recomputed=10, from_col=198
+    Mammals: Human: recomputed=10, from_col=406
+    Plants: recomputed=10, from_col=281
+    Solid waste: recomputed=10, from_col=14
+    Terrestrial: recomputed=10, from_col=479
+    Wastewater: recomputed=10, from_col=63
+
+B. Environment Threshold Filter
+--------------------------------------------------------------------------------
+  Threshold: ≥ 20 genomes per environment
+  Environments kept: 0
+  Environments dropped: 11
+
+  All environments with counts:
+    ✗ DROPPED: Algae: 10 genomes
+    ✗ DROPPED: Aquatic: 10 genomes
+    ✗ DROPPED: Bioreactor: 10 genomes
+    ✗ DROPPED: Birds: 10 genomes
+    ✗ DROPPED: Food production: 10 genomes
+    ✗ DROPPED: Mammals: 10 genomes
+    ✗ DROPPED: Mammals: Human: 10 genomes
+    ✗ DROPPED: Plants: 10 genomes
+    ✗ DROPPED: Solid waste: 10 genomes
+    ✗ DROPPED: Terrestrial: 10 genomes
+    ✗ DROPPED: Wastewater: 10 genomes
+
+  Final retained environments:
+
+C. Optional Flexibility Check
+--------------------------------------------------------------------------------
+  ⚠ WARNING: Too few environments (0) for robust scaling analysis.
+    Consider lowering threshold to 15 or 10.
+    Created valid_environments_min10.tsv with 11 environments
+    NOTE: This file exists but is not used by default
+
+D. Writing Outputs
+--------------------------------------------------------------------------------
+  ✓ valid_environments_min20_test.tsv: 0 environments
+  ✓ master_table_env_filtered_test.tsv: 0 genomes
+  ✗ WARNING: Failed to write Parquet file: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+    Install pyarrow: conda install pyarrow
+  ✓ Row count verification: 0 genomes = sum of n_genomes

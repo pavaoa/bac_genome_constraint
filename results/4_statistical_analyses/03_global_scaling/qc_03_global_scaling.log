@@ -1,0 +1,64 @@
+================================================================================
+Script 03: Global Scaling Fits
+================================================================================
+
+Loading data...
+  ✗ ERROR: Failed to load data: [Errno 2] No such file or directory: '/n/scratch/users/b/byc014/github/bac_genome_constraint/results/4_statistical_analyses/02_env_cohorts/master_table_env_filtered.parquet'
+    Trying TSV format instead...
+  ✓ Loaded 2164 genomes from TSV
+  Found 330 GO category columns
+
+  ✓ Loaded GO labels for 334 categories
+
+A. Pre-Regression Validation
+--------------------------------------------------------------------------------
+  Genomes removed due to zero counts:
+    Min: 0
+    Median: 8.5
+    Max: 107
+  Genomes remaining per category after filtering:
+    Min: 2057
+    Median: 2155.5
+    Max: 2164
+
+B. Fitting Global Scaling Laws
+--------------------------------------------------------------------------------
+  Successfully fitted 330 categories
+  Skipped 0 categories due to low sample size (<10)
+  Skipped 0 categories due to low variance
+
+C. Global Summary QC
+--------------------------------------------------------------------------------
+  Distribution of alpha_global:
+    Mean: 0.3923
+    Median: 0.2033
+    SD: 0.4529
+    Min: -0.1654
+    Max: 1.9645
+
+  QC Flags:
+    Categories with alpha < 0: 30
+    Categories with alpha > 4: 0
+    Categories with SE > 1: 0
+    Categories with R² < 0.2: 230
+
+  Top 10 categories with highest alpha_global:
+    sequence-specific DNA binding (GO:0043565): alpha=1.9645, R²=0.5716
+    NAD+ binding (GO:0070403): alpha=1.8951, R²=0.5899
+    DNA-binding transcription factor activity (GO:0003700): alpha=1.8037, R²=0.7264
+    oxidoreductase activity (GO:0016491): alpha=1.6924, R²=0.7819
+    sigma factor activity (GO:0016987): alpha=1.6904, R²=0.6153
+    DNA-templated transcription initiation (GO:0006352): alpha=1.6631, R²=0.5696
+    regulation of DNA-templated transcription (GO:0006355): alpha=1.6206, R²=0.7756
+    phosphorelay signal transduction system (GO:0000160): alpha=1.6112, R²=0.6356
+    iron ion binding (GO:0005506): alpha=1.6100, R²=0.5042
+    signal transduction (GO:0007165): alpha=1.5735, R²=0.3779
+
+  Categories skipped:
+    Low variation: 0
+    Low sample size (<10): 0
+
+D. Writing Outputs
+--------------------------------------------------------------------------------
+  ✓ global_scaling_params.tsv: 330 categories
+  ✓ global_scaling_params.parquet: 330 categories

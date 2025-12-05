@@ -1,0 +1,40 @@
+================================================================================
+Script 05: Map GO Labels
+  TEST MODE: Processing small subset only
+================================================================================
+
+Loading GO term IDs...
+  ✓ Loaded 10 GO term IDs (TEST MODE: using first 10)
+
+Parsing OBO file...
+  ✓ Parsed OBO file
+
+Mapping GO terms...
+  ✓ Mapped 10 GO terms
+  ✓ All 10 terms successfully mapped
+
+Creating plot labels...
+  ✓ Created 10 plot labels
+
+Sample mappings (first 5-10):
+  0000015 → GO:0000015: phosphopyruvate hydratase complex
+  0000049 → GO:0000049: tRNA binding
+  0000155 → GO:0000155: phosphorelay sensor kinase activity
+  0000156 → GO:0000156: phosphorelay response regulator activity
+  0000160 → GO:0000160: phosphorelay signal transduction system
+  0000166 → GO:0000166: nucleotide binding
+  0000179 → GO:0000179: rRNA (adenine-N6,N6-)-dimethyltransferase activity
+  0000271 → GO:0000271: polysaccharide biosynthetic process
+  0000287 → GO:0000287: magnesium ion binding
+  0000311 → GO:0000311: plastid large ribosomal subunit
+
+Sanity Checks
+--------------------------------------------------------------------------------
+  ✓ Row count matches input: 10 rows
+  ✓ No duplicate categories
+  ✓ All terms have definitions
+
+Writing Outputs
+--------------------------------------------------------------------------------
+  ✓ go_term_labels_test.tsv: 10 terms
+  ✓ go_term_labels_for_plots_test.tsv: 10 terms

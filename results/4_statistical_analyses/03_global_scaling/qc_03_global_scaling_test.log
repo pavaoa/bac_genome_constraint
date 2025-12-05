@@ -1,0 +1,65 @@
+================================================================================
+Script 03: Global Scaling Fits
+  TEST MODE: Processing small subset only
+================================================================================
+
+Loading data...
+  ✗ ERROR: Failed to load data: [Errno 2] No such file or directory: '/n/scratch/users/b/byc014/github/bac_genome_constraint/results/4_statistical_analyses/02_env_cohorts/master_table_env_filtered.parquet'
+    Trying TSV format instead...
+  ✓ Loaded 2164 genomes from TSV
+  Found 10 GO category columns (TEST MODE: using first 10)
+
+  ✓ Loaded GO labels for 334 categories
+
+A. Pre-Regression Validation
+--------------------------------------------------------------------------------
+  Genomes removed due to zero counts:
+    Min: 0
+    Median: 8.5
+    Max: 86
+  Genomes remaining per category after filtering:
+    Min: 2078
+    Median: 2155.5
+    Max: 2164
+
+B. Fitting Global Scaling Laws
+--------------------------------------------------------------------------------
+  Successfully fitted 10 categories
+  Skipped 0 categories due to low sample size (<10)
+  Skipped 0 categories due to low variance
+
+C. Global Summary QC
+--------------------------------------------------------------------------------
+  Distribution of alpha_global:
+    Mean: 0.6300
+    Median: 0.5751
+    SD: 0.5744
+    Min: 0.0000
+    Max: 1.6112
+
+  QC Flags:
+    Categories with alpha < 0: 0
+    Categories with alpha > 4: 0
+    Categories with SE > 1: 0
+    Categories with R² < 0.2: 5
+
+  Top 10 categories with highest alpha_global:
+    phosphorelay signal transduction system (GO:0000160): alpha=1.6112, R²=0.6356
+    phosphorelay sensor kinase activity (GO:0000155): alpha=1.4613, R²=0.4415
+    phosphorelay response regulator activity (GO:0000156): alpha=1.1688, R²=0.3105
+    polysaccharide biosynthetic process (GO:0000271): alpha=0.6971, R²=0.1683
+    magnesium ion binding (GO:0000287): alpha=0.5808, R²=0.4212
+    nucleotide binding (GO:0000166): alpha=0.5694, R²=0.4153
+    tRNA binding (GO:0000049): alpha=0.1270, R²=0.0199
+    phosphopyruvate hydratase complex (GO:0000015): alpha=0.0837, R²=0.0312
+    plastid large ribosomal subunit (GO:0000311): alpha=0.0008, R²=0.0005
+    rRNA (adenine-N6,N6-)-dimethyltransferase activity (GO:0000179): alpha=0.0000, R²=0.0000
+
+  Categories skipped:
+    Low variation: 0
+    Low sample size (<10): 0
+
+D. Writing Outputs
+--------------------------------------------------------------------------------
+  ✓ global_scaling_params_test.tsv: 10 categories
+  ✓ global_scaling_params_test.parquet: 10 categories
